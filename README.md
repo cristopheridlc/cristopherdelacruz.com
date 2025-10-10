@@ -1,0 +1,1 @@
+My personal website. Keeping things extremely simple, will be adding stuff over time.
