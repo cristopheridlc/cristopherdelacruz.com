@@ -12,3 +12,16 @@ main {
   max-width: 500px;
   padding: 1rem;
 }
+
+.columns {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+}
+
+.cristopher_face {
+  border-radius: 8px;
+}
