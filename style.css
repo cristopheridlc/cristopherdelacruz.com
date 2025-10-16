@@ -3,7 +3,22 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+}
+
+body.centered {
   align-items: center;
+}
+
+body.top-aligned {
+  align-items: center;
+  flex-direction: column;
+}
+
+nav {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 main {
@@ -11,17 +26,23 @@ main {
   width: 100%;
   max-width: 500px;
   padding: 1rem;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .columns {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column {
   flex: 1;
   padding: 10px;
+  min-width: 200px;
 }
 
 .cristopher_face {
   border-radius: 8px;
+  max-width: 100%;
+  height: auto;
 }
