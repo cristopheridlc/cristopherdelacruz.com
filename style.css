@@ -82,6 +82,16 @@ main {
   height: auto;
 }
 
+.title-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background-color: #f0f4ff;
+  color: #003366;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #1a1a1a;
@@ -90,5 +100,10 @@ main {
     --link-color: #66b3ff;
     --link-visited: #b19cd9;
     --link-hover: #99ccff;
+  }
+
+  .title-badge {
+    background-color: #23314a;
+    color: #e2ebff;
   }
 }
