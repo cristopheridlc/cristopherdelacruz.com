@@ -10,12 +10,36 @@
 :root {
   font-family: 'Inter', sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1;
+
   --bg-color: #ffffff;
-  --text-color: #000000;
-  --nav-bg: #f5f5f5;
-  --link-color: #0066cc;
-  --link-visited: #551a8b;
-  --link-hover: #0052a3;
+  --text-color: #111827;
+
+  --nav-bg: rgba(255, 255, 255, 0.7);
+  --link-color: #2563eb;
+  --link-visited: #7c3aed;
+  --link-hover: #1d4ed8;
+
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --border-subtle: rgba(15, 23, 42, 0.06);
+
+  --title-badge-bg: rgba(219, 234, 254, 0.9);
+  --title-badge-text: #1d4ed8;
+
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.18);
+  --backdrop-blur: 18px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  transition:
+    background 280ms ease-out,
+    color 200ms ease-out;
 }
 
 body {
@@ -23,12 +47,26 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  background-color: var(--bg-color);
+  align-items: stretch;
   color: var(--text-color);
+
+  background:
+    radial-gradient(circle at 0% 0%, #e0f2fe 0, transparent 55%),
+    radial-gradient(circle at 100% 0%, #fce7f3 0, transparent 55%),
+    radial-gradient(circle at 0% 100%, #dcfce7 0, transparent 55%),
+    radial-gradient(circle at 100% 100%, #e5e7eb 0, transparent 55%),
+    var(--bg-color);
+  background-attachment: fixed;
 }
 
 a {
   color: var(--link-color);
+  text-decoration: none;
+  transition:
+    color 180ms ease-out,
+    text-shadow 180ms ease-out,
+    box-shadow 180ms ease-out,
+    background-color 180ms ease-out;
 }
 
 a:visited {
@@ -37,6 +75,7 @@ a:visited {
 
 a:hover {
   color: var(--link-hover);
+  text-shadow: 0 0 0.6px currentColor;
 }
 
 body.centered {
@@ -54,20 +93,28 @@ nav {
   text-align: center;
   box-sizing: border-box;
   background-color: var(--nav-bg);
+  backdrop-filter: blur(var(--backdrop-blur));
 }
 
 main {
   text-align: center;
   width: 100%;
   max-width: 500px;
-  padding: 1rem;
-  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  margin: 1.5rem auto;
   box-sizing: border-box;
+
+  background: var(--card-bg);
+  border-radius: 18px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(var(--backdrop-blur));
 }
 
 .columns {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .column {
@@ -76,34 +123,98 @@ main {
   min-width: 200px;
 }
 
+h1 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.9rem;
+  letter-spacing: 0.03em;
+}
+
+h3 {
+  margin-top: 0.2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
 .cristopher_face {
-  border-radius: 8px;
+  border-radius: 14px;
   max-width: 100%;
   height: auto;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.25);
+  transition:
+    transform 80ms ease-out,
+    box-shadow 180ms ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.cristopher_face:hover {
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.32);
 }
 
 .title-badge {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.9rem;
   border-radius: 999px;
-  background-color: #f0f4ff;
-  color: #003366;
+  background-color: var(--title-badge-bg);
+  color: var(--title-badge-text);
   font-weight: 600;
   font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+address {
+  font-style: normal;
+  margin-bottom: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #1a1a1a;
-    --text-color: #ffffff;
-    --nav-bg: #2a2a2a;
-    --link-color: #66b3ff;
-    --link-visited: #b19cd9;
-    --link-hover: #99ccff;
+    --bg-color: #020617;
+    --text-color: #e5e7eb;
+
+    --nav-bg: rgba(15, 23, 42, 0.85);
+    --link-color: #93c5fd;
+    --link-visited: #c7b5ff;
+    --link-hover: #bfdbfe;
+
+    --card-bg: rgba(15, 23, 42, 0.9);
+    --border-subtle: rgba(148, 163, 184, 0.25);
+
+    --title-badge-bg: rgba(30, 64, 175, 0.7);
+    --title-badge-text: #e5edff;
+
+    --shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.6);
+    --backdrop-blur: 22px;
   }
 
-  .title-badge {
-    background-color: #23314a;
-    color: #e2ebff;
+  body {
+    background:
+      radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.25) 0, transparent 55%),
+      radial-gradient(circle at 100% 0%, rgba(147, 51, 234, 0.2) 0, transparent 55%),
+      radial-gradient(circle at 100% 100%, rgba(14, 165, 233, 0.18) 0, transparent 55%),
+      radial-gradient(circle at 0% 100%, rgba(34, 197, 94, 0.14) 0, transparent 55%),
+      radial-gradient(circle, #020617 0, #020617 60%, #000000 100%);
+    background-attachment: fixed;
+  }
+
+  main {
+    background: var(--card-bg);
+  }
+
+  a:hover {
+    text-shadow: 0 0 1px currentColor;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    margin: 1rem;
+    padding: 1.25rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.7rem;
   }
 }
