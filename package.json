@@ -1,0 +1,12 @@
+{
+  "name": "cristopherdelacruz.com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website of Cristopher De La Cruz",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}
