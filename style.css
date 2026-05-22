@@ -180,6 +180,11 @@ address {
   color: var(--text-color);
   opacity: 0.55;
   letter-spacing: 0.02em;
+  transition: opacity 200ms ease-out;
+}
+
+.footer-text:hover {
+  opacity: 0.9;
 }
 
 @media (prefers-color-scheme: dark) {
