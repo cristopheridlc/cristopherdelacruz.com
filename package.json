@@ -4,9 +4,12 @@
   "private": true,
   "description": "Personal website of Cristopher De La Cruz",
   "scripts": {
-    "dev": "vite"
+    "dev": "node build-blog.js && vite",
+    "build": "node build-blog.js && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^6.2.0"
+    "vite": "^6.2.0",
+    "marked": "^12.0.0"
   }
 }
