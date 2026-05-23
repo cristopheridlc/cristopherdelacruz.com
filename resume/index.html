@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; frame-src 'none'; object-src 'none';">
+    <meta name="description" content="Interactive resume of Cristopher De La Cruz, Business Intelligence Developer. Experience, skills, and certifications.">
+    <title>Resume | Cristopher De La Cruz</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body class="centered">
+    <main>
+        <!-- === CARD NAVIGATION TABS === -->
+        <header class="card-header-tabs">
+            <a href="/" class="card-tab">Home</a>
+            <a href="/resume/" class="card-tab active">Resume</a>
+            <a href="/blog/" class="card-tab">Blog</a>
+        </header>
+
+        <div class="card-body">
+            <!-- === ACTION BUTTONS === -->
+            <div style="text-align: center;">
+                <a href="../resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-download-link">
+                    View my resume as a PDF &rarr;
+                </a>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- === EDUCATION SECTION === -->
+            <!-- ============================================ -->
+            <h2 class="resume-section-title">Education</h2>
+            <div class="education-card">
+                <div class="edu-header">
+                    <div class="company-logo-slot">
+                        <img src="../assets/uscupstate.png" alt="USC Upstate Logo" class="company-logo">
+                    </div>
+                    <div class="edu-header-text">
+                        <h4>University of South Carolina Upstate</h4>
+                        <p>BA in Information Management and Systems</p>
+                    </div>
+                    <time class="edu-time">Dec 2024</time>
+                </div>
+            </div>
+
+            <!-- ============================================ -->
+            <!-- === PROFESSIONAL EXPERIENCE SECTION === -->
+            <!-- ============================================ -->
+            <h2 class="resume-section-title">Experience</h2>
+            <div class="timeline">
+
+                <!-- Beacon Hill -->
+                <!-- To add a new role, copy from here to the next START block -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="company-logo-slot">
+                                <img src="../assets/beacon_hill_bhsg_logo.jpeg" alt="Beacon Hill Logo" class="company-logo">
+                            </div>
+                            <div class="timeline-header-text">
+                                <time>February 2023 – Present</time>
+                                <h3>Analytics Engineer</h3>
+                                <h4>Beacon Hill – Remote</h4>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Developed Python data pipelines for Azure DevOps and SAP BO ETL into Oracle DW.</li>
+                            <li>Deployed on-prem dbt Core environment with cron-based DAG orchestration.</li>
+                            <li>Developed SQL dbt models for customer service data, exposing via SQL views to BI platform.</li>
+                            <li>Enabled visibility into 7,000+ incident & bug reports, prompting backlog reduction initiative.</li>
+                            <li>Efforts led to 15% of outstanding Sev1/Sev2 issues cleared in 2025 Q1-Q2.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Halo Creations -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="company-logo-slot">
+                                <!-- To add a logo image/SVG, uncomment the line below and specify the file path: -->
+                                <!-- <img src="../assets/halo-creations.svg" alt="Halo Creations Logo" class="company-logo"> -->
+                                <span>H</span>
+                            </div>
+                            <div class="timeline-header-text">
+                                <time>October 2025 – Present</time>
+                                <h3>Co-Founder & DevOps Engineer</h3>
+                                <h4>Halo Creations – Remote</h4>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Established secure infrastructure, configuring Tailscale-integrated Docker services like Forgejo and Nextcloud on hybrid on-prem/cloud servers for team collaboration.</li>
+                            <li>Leveraged personal hardware for cost-free hybrid setup, enabling stable app/website hosting and reducing external expenses by 100% in early stages.</li>
+                            <li>Enabled seamless team access to services by implementing Tailscale features (Serve, Funnel, subnet routing) ensuring full functionality across distributed environments.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Amazon -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="company-logo-slot">
+                                <picture>
+                                    <source srcset="../assets/amazon-light.svg" media="(prefers-color-scheme: dark)">
+                                    <img src="../assets/amazon.svg" alt="Amazon Logo" class="company-logo">
+                                </picture>
+                            </div>
+                            <div class="timeline-header-text">
+                                <time>June 2023 – August 2023</time>
+                                <h3>Business Intelligence Engineer Intern</h3>
+                                <h4>Amazon – Bellevue, WA</h4>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Built QuickSight dashboards tracking weekly net capacity forecasts for all Canada FCs.</li>
+                            <li>Built QuickSight Canada capacity planning metric paginated reports for all Canada FCs.</li>
+                            <li>Automated 3 hour weekly manual capacity report to QuickSight dashboard.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BMW AP -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="company-logo-slot">
+                                <picture>
+                                    <source srcset="../assets/bmw-white.svg" media="(prefers-color-scheme: dark)">
+                                    <img src="../assets/bmw-gray.svg" alt="BMW Logo" class="company-logo">
+                                </picture>
+                            </div>
+                            <div class="timeline-header-text">
+                                <time>August 2022 – December 2022</time>
+                                <h3>Accounting Data Analyst Intern</h3>
+                                <h4>BMW Manufacturing – Greer, SC</h4>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Built Kimball star-schema model in PBI from manual SAP ECC exports.</li>
+                            <li>Delivered PBI dashboards for Accounts Payable KPIs analyzing all global BMW suppliers.</li>
+                            <li>Managed on-prem department PBI Report Server, managing refreshes & permissions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BMW QMT -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="company-logo-slot">
+                                <picture>
+                                    <source srcset="../assets/bmw-white.svg" media="(prefers-color-scheme: dark)">
+                                    <img src="../assets/bmw-gray.svg" alt="BMW Logo" class="company-logo">
+                                </picture>
+                            </div>
+                            <div class="timeline-header-text">
+                                <time>January 2022 – May 2022</time>
+                                <h3>QMT Data Analyst Intern</h3>
+                                <h4>BMW Manufacturing – Greer, SC</h4>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Built PBI dashboard visualizing car manufacturing progress by pulling near real-time data from Oracle DBs to support section manager decision making.</li>
+                            <li>Delivered weekly report evaluating 30+ BMW suppliers via weighted scoring system considering defect rates, PPM, delivery compliance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ============================================ -->
+            <!-- === CERTIFICATIONS SECTION === -->
+            <!-- ============================================ -->
+            <h2 class="resume-section-title">Certifications</h2>
+            <div class="certifications-container">
+                
+                <!-- PL-300 -->
+                <!-- To link to a verification site, replace '#' inside href="..." with your URL -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-logo-wrapper">
+                        <img src="../assets/microsoft.svg" alt="Microsoft Logo" class="cert-logo">
+                    </div>
+                    <div class="cert-info">
+                        <h4>Power BI Data Analyst Associate</h4>
+                        <p>Microsoft (PL-300)</p>
+                    </div>
+                    <div class="cert-date">Oct 2022 – Oct 2025</div>
+                </a>
+
+                <!-- DP-900 -->
+                <!-- To link to a verification site, replace '#' inside href="..." with your URL -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-logo-wrapper">
+                        <img src="../assets/microsoft.svg" alt="Microsoft Logo" class="cert-logo">
+                    </div>
+                    <div class="cert-info">
+                        <h4>Azure Data Fundamentals</h4>
+                        <p>Microsoft (DP-900)</p>
+                    </div>
+                    <div class="cert-date">Nov 2022</div>
+                </a>
+
+                <!-- AZ-900 -->
+                <!-- To link to a verification site, replace '#' inside href="..." with your URL -->
+                <a href="#" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-logo-wrapper">
+                        <img src="../assets/microsoft.svg" alt="Microsoft Logo" class="cert-logo">
+                    </div>
+                    <div class="cert-info">
+                        <h4>Azure Fundamentals</h4>
+                        <p>Microsoft (AZ-900)</p>
+                    </div>
+                    <div class="cert-date">Nov 2022</div>
+                </a>
+
+            </div>
+
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

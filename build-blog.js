@@ -156,6 +156,7 @@ function getBaseHtml(title, description, bodyContent, activeTab = 'blog') {
     <main>
         <header class="card-header-tabs">
             <a href="/" class="card-tab ${activeTab === 'home' ? 'active' : ''}">Home</a>
+            <a href="/resume/" class="card-tab ${activeTab === 'resume' ? 'active' : ''}">Resume</a>
             <a href="/blog/" class="card-tab ${activeTab === 'blog' ? 'active' : ''}">Blog</a>
         </header>
         <div class="card-body">
