@@ -45,7 +45,8 @@ function parseFrontMatter(content) {
 function buildBlog() {
   console.log('Compiling blog posts...');
   
-  const files = fs.readdirSync(postsDir).filter(file => file.endsWith('.md'));
+  // Filter out template.md so it doesn't get published as an article
+  const files = fs.readdirSync(postsDir).filter(file => file.endsWith('.md') && file !== 'template.md');
   const posts = [];
 
   files.forEach(file => {
@@ -55,9 +56,52 @@ function buildBlog() {
     
     const { metadata, body } = parseFrontMatter(content);
     
-    const title = metadata.title || 'Untitled Post';
-    const date = metadata.date || new Date().toISOString().split('T')[0];
-    const description = metadata.description || '';
+    let title = metadata.title;
+    let date = metadata.date || new Date().toISOString().split('T')[0];
+    let description = metadata.description;
+    
+    // SMART FALLBACK 1: Extract Title from first '# Heading' in markdown if missing
+    if (!title) {
+      const titleMatch = body.match(/^#\s+(.+)$/m);
+      if (titleMatch) {
+        title = titleMatch[1].trim();
+      } else {
+        // Fallback to humanizing the file name slug
+        title = slug
+          .split('-')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+      }
+    }
+    
+    // SMART FALLBACK 2: Extract Description from the first normal text paragraph if missing
+    if (!description) {
+      const paragraphs = body.split(/\r?\n\r?\n/);
+      const firstParagraph = paragraphs.find(p => {
+        const trimmed = p.trim();
+        return trimmed && 
+               !trimmed.startsWith('#') && 
+               !trimmed.startsWith('-') && 
+               !trimmed.startsWith('*') && 
+               !trimmed.startsWith('>');
+      });
+
+      if (firstParagraph) {
+        // Strip markdown symbols and clean up links for a pristine description preview
+        description = firstParagraph
+          .trim()
+          .replace(/[#*`_~]/g, '')
+          .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Convert [Link](url) -> Link
+          .substring(0, 160); // Safe length for SEO preview snippet
+        
+        if (firstParagraph.trim().length > 160) {
+          description += '...';
+        }
+      } else {
+        description = 'Read article for details.';
+      }
+    }
+    
     const htmlContent = marked.parse(body);
     
     posts.push({
