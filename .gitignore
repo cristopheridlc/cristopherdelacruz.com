@@ -36,3 +36,6 @@ Thumbs.db
 # Vite cache & build
 .vite/
 dist/
+
+# Generated blog html
+blog/
