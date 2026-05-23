@@ -6,7 +6,7 @@ Deployed live at: **[cristopherdelacruz.com](https://cristopherdelacruz.com)**
 
 ---
 
-## 🚀 Tech Stack & Architecture
+## Tech Stack & Architecture
 
 - **Core**: Vanilla HTML5, Vanilla CSS3 (with dynamic gradients and HSL variables), and Vanilla JavaScript (featuring custom 3D card tilt interactive animations).
 - **Tab Layout**: Single-card "browser-like" tab system (`Home` | `Blog`) keeping navigation visual, centered, and immersive on all resolutions.
@@ -17,7 +17,7 @@ Deployed live at: **[cristopherdelacruz.com](https://cristopherdelacruz.com)**
 
 ---
 
-## 🛠️ Local Development
+## Local Development
 
 To run the site locally with hot-reloading:
 
@@ -37,7 +37,7 @@ To run the site locally with hot-reloading:
 
 ---
 
-## 📝 Zero-Maintenance Publishing Flow
+## Zero-Maintenance Publishing Flow
 
 Committing compiled HTML files or compiling posts locally is not required. Writing a post is 100% automated:
 
@@ -57,7 +57,45 @@ Writing posts is highly flexible and supports two configurations:
 
 ---
 
-## 🛡️ Security Hardening
+## How to Edit Your Resume
+
+The interactive resume page `resume/index.html` is built using highly modular, clearly commented, and copy-paste-friendly HTML. Modifications are designed to be extremely straightforward:
+
+### 1. Adding a New Role
+All experience timeline blocks are self-contained. To insert a new job, copy the block below, paste it at the top of the `<div class="timeline">` container in `resume/index.html`, and edit the text:
+```html
+<!-- === START TIMELINE ITEM === -->
+<div class="timeline-item">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+        <time>Start Date – End Date</time>
+        <h3>Your Job Title</h3>
+        <h4>Company Name – Location</h4>
+        <ul>
+            <li>Achieved metrics and deliverables...</li>
+            <li>Collaborated with teams on technology X...</li>
+        </ul>
+    </div>
+</div>
+<!-- === END TIMELINE ITEM === -->
+```
+
+### 2. Adding Certification Verification Links
+Certification cards are built as anchor links pointing to a placeholder `#`. To add a verification URL (such as a Credly or Microsoft verification badge URL), replace the `#` inside the `href="..."` attribute:
+```html
+<!-- Replace '#' with your actual verification link -->
+<a href="https://verify.example.com" target="_blank" rel="noopener noreferrer" class="cert-card">
+    <div class="cert-info">
+        <h4>Power BI Data Analyst Associate</h4>
+        <p>Microsoft (PL-300)</p>
+    </div>
+    <div class="cert-date">Oct 2022 – Oct 2025</div>
+</a>
+```
+
+---
+
+## Security Hardening
 
 This website is hardened following modern security best practices:
 
@@ -69,7 +107,7 @@ This website is hardened following modern security best practices:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ├── .github/workflows/
