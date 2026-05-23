@@ -414,6 +414,7 @@ address {
   line-height: 1.65;
   color: var(--text-color);
   opacity: 0.9;
+  text-align: left;
 }
 
 .post-body p {

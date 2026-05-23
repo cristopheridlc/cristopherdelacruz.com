@@ -60,9 +60,11 @@ function buildBlog() {
     let date = metadata.date || new Date().toISOString().split('T')[0];
     let description = metadata.description;
     
+    let parsedBody = body;
+    const titleMatch = body.match(/^#\s+(.+)$/m);
+    
     // SMART FALLBACK 1: Extract Title from first '# Heading' in markdown if missing
     if (!title) {
-      const titleMatch = body.match(/^#\s+(.+)$/m);
       if (titleMatch) {
         title = titleMatch[1].trim();
       } else {
@@ -74,9 +76,14 @@ function buildBlog() {
       }
     }
     
+    // Always strip the first H1 heading from the body to avoid double-rendering
+    if (titleMatch) {
+      parsedBody = body.replace(titleMatch[0], '').trim();
+    }
+    
     // SMART FALLBACK 2: Extract Description from the first normal text paragraph if missing
     if (!description) {
-      const paragraphs = body.split(/\r?\n\r?\n/);
+      const paragraphs = parsedBody.split(/\r?\n\r?\n/);
       const firstParagraph = paragraphs.find(p => {
         const trimmed = p.trim();
         return trimmed && 
@@ -102,7 +109,7 @@ function buildBlog() {
       }
     }
     
-    const htmlContent = marked.parse(body);
+    const htmlContent = marked.parse(parsedBody);
     
     posts.push({
       slug,
