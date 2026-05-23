@@ -14,7 +14,6 @@
   --bg-color: #ffffff;
   --text-color: #111827;
 
-  --nav-bg: rgba(255, 255, 255, 0.7);
   --link-color: #2563eb;
   --link-visited: #7c3aed;
   --link-hover: #1d4ed8;
@@ -80,11 +79,6 @@ a:hover {
 
 body.centered {
   align-items: center;
-}
-
-body.top-aligned {
-  align-items: center;
-  flex-direction: column;
 }
 
 /* Browser-like Card Tabs Header */
@@ -245,7 +239,6 @@ address {
     --bg-color: #020617;
     --text-color: #e5e7eb;
 
-    --nav-bg: rgba(15, 23, 42, 0.85);
     --link-color: #93c5fd;
     --link-visited: #c7b5ff;
     --link-hover: #bfdbfe;
