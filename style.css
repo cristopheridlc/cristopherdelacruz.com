@@ -34,6 +34,11 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 html,
 body {
   transition:
@@ -693,8 +698,8 @@ address {
 
 /* Premium Logo Slot & Layout Alignment Integration */
 .company-logo-slot {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
   border-radius: 8px;
   background: rgba(15, 23, 42, 0.04);
@@ -716,20 +721,9 @@ address {
   background: none;
 }
 
-.timeline-item:hover .company-logo-slot,
-.education-card:hover .company-logo-slot {
-  transform: scale(1.04);
-  border-color: var(--link-color);
-  background: rgba(15, 23, 42, 0.06);
-}
-
 @media (prefers-color-scheme: dark) {
   .company-logo-slot {
     background: rgba(255, 255, 255, 0.03);
-  }
-  .timeline-item:hover .company-logo-slot,
-  .education-card:hover .company-logo-slot {
-    background: rgba(255, 255, 255, 0.05);
   }
 }
 
@@ -865,4 +859,241 @@ address {
 
 .cert-info {
   flex-grow: 1;
+}
+
+/* Skills Section Styles */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.skills-group {
+  background: rgba(15, 23, 42, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skills-group {
+    background: rgba(255, 255, 255, 0.01);
+  }
+}
+
+.skills-group h3 {
+  margin: 0 0 0.75rem 0;
+  font-weight: 700;
+  color: var(--text-color);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  opacity: 0.65;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-color);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 150ms ease-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skill-badge {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.skill-badge:hover {
+  background: var(--link-color);
+  color: #ffffff;
+  border-color: var(--link-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+/* Contractor/Client Layout */
+.timeline-header.contractor-header {
+  position: relative;
+  width: 100%;
+}
+
+.client-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto; /* Pushes client logo to the right */
+  flex-shrink: 0;
+  background: rgba(15, 23, 42, 0.015);
+  border: 1px solid var(--border-subtle);
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .client-logo-wrapper {
+    background: rgba(255, 255, 255, 0.01);
+  }
+}
+
+.client-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.5;
+  color: var(--text-color);
+}
+
+.client-arrow {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  color: var(--link-color);
+  font-weight: bold;
+}
+
+.client-logo-slot {
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+}
+
+
+
+/* Tooltip styling for Client Logo Wrapper */
+.client-logo-wrapper {
+  position: relative;
+}
+
+/* Tooltip Text Bubble */
+.client-logo-wrapper::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 125%;
+  right: 0;
+  transform: translateY(-4px);
+  background: rgba(15, 23, 42, 0.95);
+  color: #ffffff;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  z-index: 10;
+}
+
+/* Tooltip Triangle Arrow */
+.client-logo-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 110%;
+  right: 14px; /* Centered over the 28px client logo slot */
+  transform: translateY(-4px);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent rgba(15, 23, 42, 0.95) transparent;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+@media (prefers-color-scheme: dark) {
+  .client-logo-wrapper::after {
+    background: rgba(255, 255, 255, 0.98);
+    color: #0f172a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  }
+  .client-logo-wrapper::before {
+    border-color: transparent transparent rgba(255, 255, 255, 0.98) transparent;
+  }
+}
+
+.timeline-item:hover .client-logo-wrapper::after,
+.timeline-item:hover .client-logo-wrapper::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Job Status Tags (Stacked Under Logos) */
+.timeline-header {
+  align-items: flex-start; /* Align logo top edge with the top of the date range text */
+}
+
+.logo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  width: 54px; /* Slightly wider to prevent mobile text wrapping */
+}
+
+.job-status-tag {
+  display: inline-block;
+  padding: 2px 3px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(15, 23, 42, 0.03);
+  color: var(--text-color);
+  opacity: 0.85;
+  white-space: nowrap;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .job-status-tag {
+    background: rgba(255, 255, 255, 0.03);
+  }
+}
+
+.job-status-tag.status-contract {
+  border-color: rgba(37, 99, 235, 0.2);
+  color: var(--link-color);
+}
+
+.job-status-tag.status-internship {
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #10b981;
+}
+
+.job-status-tag.status-parttime {
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #d97706;
+}
+
+@media (prefers-color-scheme: dark) {
+  .job-status-tag.status-parttime {
+    color: #fbbf24;
+  }
+}
+
+/* Timeline Optional Job Note */
+.timeline-note {
+  margin: 0.25rem 0 0.75rem 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  opacity: 0.65;
+  font-weight: 500;
+  font-style: italic;
 }
