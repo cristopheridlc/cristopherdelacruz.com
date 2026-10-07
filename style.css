@@ -1067,6 +1067,17 @@ address {
   }
 }
 
+.job-status-tag.status-fulltime {
+  border-color: rgba(79, 70, 229, 0.3);
+  color: #4f46e5;
+}
+
+@media (prefers-color-scheme: dark) {
+  .job-status-tag.status-fulltime {
+    color: #a5b4fc;
+  }
+}
+
 .job-status-tag.status-contract {
   border-color: rgba(37, 99, 235, 0.2);
   color: var(--link-color);
